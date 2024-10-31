@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# rubocop:disable Rails/I18nLocaleTexts
+
 class TeachersController < ApplicationController
   before_action :set_teacher, only: [:show, :edit, :update, :destroy]
 
@@ -73,3 +75,5 @@ class TeachersController < ApplicationController
     params.require(:teacher).permit(:first_name, :last_name)
   end
 end
+
+# rubocop:enable Rails/I18nLocaleTexts

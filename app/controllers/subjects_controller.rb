@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# rubocop:disable Rails/I18nLocaleTexts
+
 class SubjectsController < ApplicationController
   before_action :set_subject, only: [:show, :edit, :update, :destroy]
 
@@ -82,3 +84,5 @@ class SubjectsController < ApplicationController
     }
   end
 end
+
+# rubocop:enable Rails/I18nLocaleTexts

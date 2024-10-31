@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# rubocop:disable Rails/I18nLocaleTexts
+
 class TeacherSubjectsController < ApplicationController
   before_action :_set_teacher_subject, only: [:show, :edit, :update, :destroy]
   before_action :_set_teacher, only: [:new, :create]
@@ -49,3 +51,5 @@ class TeacherSubjectsController < ApplicationController
     params.require(:teacher_subject).permit(:level, :subject_id)
   end
 end
+
+# rubocop:enable Rails/I18nLocaleTexts
