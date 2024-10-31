@@ -11,4 +11,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  resources :teachers do
+    resources :teacher_subjects, shallow: true
+  end
+  resources :subjects
+  root to: 'subjects#index'
 end
