@@ -28,4 +28,25 @@
 #       enabled: "ON"
 
 en:
-  hello: "Hello world"
+  controllers:
+    subject:
+      create:
+        success: "Subject was successfully created."
+      update:
+        success: "Subject was successfully updated."
+      destroy:
+        success: "Subject was successfully destroyed."
+    teacher_subject:
+      create:
+        success: "Teacher subject was successfully created."
+      update:
+        success: "Teacher subject was successfully updated."
+      destroy:
+        success: "Teacher subject was successfully destroyed."
+    teacher:
+      create:
+        success: "Teacher was successfully created."
+      update:
+        success: "Teacher was successfully updated."
+      destroy:
+        success: "Teacher was successfully destroyed."
