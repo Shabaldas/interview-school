@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# rubocop:disable Rails/I18nLocaleTexts
-
 class TeacherSubjectsController < ApplicationController
   before_action :_set_teacher_subject, only: [:show, :edit, :update, :destroy]
   before_action :_set_teacher, only: [:new, :create]
@@ -18,7 +16,7 @@ class TeacherSubjectsController < ApplicationController
     @teacher_subject = TeacherSubject.new _teacher_subject_params
     @teacher_subject.teacher = @teacher
     if @teacher_subject.save
-      flash[:notice] = 'Class was successfully added'
+      flash[:notice] = t('controllers.teacher_subject.create.success')
     else
       render :new
     end
@@ -34,7 +32,7 @@ class TeacherSubjectsController < ApplicationController
 
   def destroy
     @teacher_subject.destroy!
-    flash.now[:notice] = 'Class was successfully removed'
+    flash.now[:notice] = t('controllers.teacher_subject.destroy.success')
   end
 
   private
@@ -51,5 +49,3 @@ class TeacherSubjectsController < ApplicationController
     params.require(:teacher_subject).permit(:level, :subject_id)
   end
 end
-
-# rubocop:enable Rails/I18nLocaleTexts
