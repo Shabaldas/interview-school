@@ -1,0 +1,18 @@
+<% flash.each do |key, value| %>
+  <% text = value["text"].present? ? value["text"] : value %>
+  <div data-controller="flash" class="px-2 py-2 md:px-4 rounded-md md:rounded-xl" style="background:#<%#= backgroud_color_for_flash(key) %>">
+    <div class="flex items-start justify-between">
+      <div class="flex items-start">
+        <h2 class="mx-2 mt-[1.45px]
+        text-base font-medium text-dark-blue text-left">
+          <%= text %>
+        </h2>
+      </div>
+      <button type="button" data-action="flash#dismiss">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="#2A343E">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+<% end %>

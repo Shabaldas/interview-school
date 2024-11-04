@@ -28,12 +28,18 @@ class SubjectsController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @subject.update(subject_params.merge(teacher_subjects_params))
-        format.html { redirect_to @subject, notice: t('controllers.subject.update.success') }
-      else
-        format.html { render :edit }
+    if @subject.update(subject_params.merge(teacher_subjects_params))
+      respond_to do |format|
+        flash.now[:notice] = { text: t('controllers.subject.update.success') }.stringify_keys
+
+        format.turbo_stream do
+          render turbo_stream: [
+            turbo_stream.prepend('flash', partial: 'shared/flash')
+          ]
+        end
       end
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 

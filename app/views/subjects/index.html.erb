@@ -18,7 +18,7 @@
         <td><%= subject.description %></td>
         <td><%= link_to 'Show', subject %></td>
         <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
-        <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to 'Destroy', subject, method: :delete, data: { turbo_confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
