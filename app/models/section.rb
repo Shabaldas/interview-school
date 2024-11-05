@@ -9,4 +9,8 @@ class Section < ApplicationRecord
   has_many :students, through: :enrollments
 
   validates :start_time, :end_time, :days, presence: true
+
+  def days_of_week_list
+    JSON.parse(days).join(', ')
+  end
 end
