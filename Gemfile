@@ -54,8 +54,10 @@ group :development do
 end
 
 group :test do
+  gem 'database_cleaner-active_record'
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'simplecov', require: false
+  gem 'timecop', '~> 0.9.6'
 end
