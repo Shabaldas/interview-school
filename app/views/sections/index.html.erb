@@ -15,7 +15,7 @@
           <% @sections.each do |section| %>
             <tr class="hover:bg-gray-50 text-gray-800">
               <td class="py-3 px-6 border-b border-gray-300 text-center"><%= section.subject.name %></td>
-              <td class="py-3 px-6 border-b border-gray-300 text-center"><%= section.teacher.first_and_last_name %></td>
+              <td class="py-3 px-6 border-b border-gray-300 text-center"><%= section.teacher.full_name %></td>
               <td class="py-3 px-6 border-b border-gray-300 text-center"><%= section.classroom.name %></td>
               <td class="py-3 px-6 border-b border-gray-300 text-center"><%= "#{section.start_time.strftime('%I:%M %p')} - #{section.end_time.strftime('%I:%M %p')}" %></td>
               <td class="py-3 px-6 border-b border-gray-300 text-center"><%= JSON.parse(section.days).join(', ') %></td>
