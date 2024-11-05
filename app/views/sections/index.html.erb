@@ -1,7 +1,16 @@
 <div class="flex flex-col items-center space-y-6">
+  <div class="w-full flex justify-end pr-6 mt-4">
+    <%= link_to download_schedule_pdf_sections_path(current_student), class: 'flex items-center space-x-2 text-blue-600 hover:text-blue-800', target: '_blank' do %>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v6h16v-6M4 8v8m8-8v6m0 0l-3-3m3 3l3-3m0 3v-6a4 4 0 00-8 0v6" />
+      </svg>
+      <span>Download Schedule PDF</span>
+    <% end %>
+  </div>
   <div class="container mx-auto p-6">
-    <h1 class="text-3xl font-bold text-gray-800 mb-6">Available Sections</h1>
-
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">
+      My Enrolled Sections
+    </h1>
     <% if @sections.any? %>
       <table class="min-w-full bg-white border border-gray-300 rounded-lg shadow">
         <thead>
@@ -20,11 +29,7 @@
               <td class="py-3 px-6 border-b border-gray-300 text-center"><%= "#{section.start_time.strftime('%I:%M %p')} - #{section.end_time.strftime('%I:%M %p')}" %></td>
               <td class="py-3 px-6 border-b border-gray-300 text-center"><%= JSON.parse(section.days).join(', ') %></td>
               <td class="py-3 px-6 border-b border-gray-300 text-center">
-                <% if current_student.sections.include?(section) %>
-                  <%= button_to 'Withdraw', withdraw_section_path(section), method: :delete, class: 'text-red-600 hover:text-red-800 underline' %>
-                <% else %>
-                  <%= button_to 'Enroll', enroll_section_path(section), method: :post, class: 'text-blue-600 hover:text-blue-800 underline' %>
-                <% end %>
+              <%= button_to 'Withdraw', withdraw_section_path(section), method: :delete, class: 'text-red-600 hover:text-red-800 underline' %>
               </td>
             </tr>
           <% end %>
