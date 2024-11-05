@@ -371,6 +371,7 @@ DEPENDENCIES
   foreman
   jbuilder
   jsbundling-rails
+  matrix
   pg (~> 1.5.9)
   prawn
   prawn-table

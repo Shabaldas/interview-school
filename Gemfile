@@ -14,6 +14,8 @@ gem 'stimulus-rails'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[ windows jruby ]
 gem 'faker'
+gem 'matrix'
+
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
