@@ -28,6 +28,14 @@ class SectionsController < ApplicationController
     redirect_to sections_path, alert: { text: "Withdrawn from #{@section.subject.name}" }
   end
 
+  def download_schedule_pdf
+    pdf = ::StudentSchedulePdfService.new(current_student).generate
+    send_data pdf.render,
+              filename: "#{current_student.full_name}_schedule.pdf",
+              type: 'application/pdf',
+              disposition: 'inline'
+  end
+
   private
 
   def set_section

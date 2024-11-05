@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :sections, only: [:index, :show] do
     get 'available', on: :collection
+    get 'download_schedule_pdf', on: :collection
 
     member do
       post 'enroll'
