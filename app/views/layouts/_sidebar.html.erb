@@ -1,0 +1,42 @@
+<div class="hidden xl:fixed xl:inset-y-0 xl:z-50 xl:flex xl:w-72 xl:flex-col">
+  <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-800 px-6 ring-1 ring-white/5">
+    <div class="flex h-16 shrink-0 items-center">
+      <%= link_to root_path do%>
+        <span class="text-white text-xl font-semibold">
+          Interview School
+        </span>
+      <% end %>
+    </div>
+    <nav class="flex flex-1 flex-col">
+      <ul role="list" class="flex flex-1 flex-col gap-y-7">
+        <li>
+          <ul role="list" class="-mx-2 space-y-1">
+            <li>
+              <%= link_to sections_path, class: "group flex gap-x-3 rounded-md p-2 text-sm font-semibold text-gray-400 hover:bg-gray-700 hover:text-white" do %>
+                <svg class="h-6 w-6 shrink-0 text-gray-400 group-hover:text-white" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5"/>
+                </svg>
+                My Enrolled Sections
+              <% end %>
+            </li>
+            <li>
+              <%= link_to available_sections_path, class: "group flex gap-x-3 rounded-md p-2 text-sm font-semibold text-gray-400 hover:bg-gray-700 hover:text-white" do %>
+                <svg class="h-6 w-6 shrink-0 text-gray-400 group-hover:text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7h12M8 11h12M8 15h12M8 19h12M4 7h.01M4 11h.01M4 15h.01M4 19h.01" />
+                </svg>
+                Available Sections
+              <% end %>
+            </li>
+          </ul>
+        </li>
+        <li class="-mx-6 mt-auto">
+          <div class="flex items-center gap-x-4 px-6 py-3 text-sm font-semibold text-white bg-gray-900">
+            <span>
+              <%= current_student.full_name %>
+            </span>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
