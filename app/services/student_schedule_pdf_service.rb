@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class StudentSchedulePdfService
   def initialize(student)
     @student = student
@@ -66,6 +68,6 @@ class StudentSchedulePdfService
 
   def add_footer(pdf)
     pdf.move_down 30
-    pdf.text "Generated on #{Time.now.strftime('%A, %d %B %Y at %I:%M %p')}", size: 10, align: :right, style: :italic
+    pdf.text "Generated on #{Time.zone.now.strftime('%A, %d %B %Y at %I:%M %p')}", size: 10, align: :right, style: :italic
   end
 end
