@@ -30,11 +30,19 @@
           </ul>
         </li>
         <li class="-mx-6 mt-auto">
-          <div class="flex items-center gap-x-4 px-6 py-3 text-sm font-semibold text-white bg-gray-900">
-            <span>
-              <%= current_student.full_name %>
-            </span>
-          </div>
+          <% if current_student.present? %>
+            <div class="flex items-center gap-x-4 px-6 py-3 text-sm font-semibold text-white bg-gray-900">
+              <span>
+                <%= current_student.full_name %>
+              </span>
+            </div>
+          <% else %>
+            <%= link_to new_session_path, class: "flex items-center gap-x-4 px-6 py-3 text-sm font-semibold text-white bg-gray-900" do %>
+              <span>
+                Sign In
+              </span>
+            <% end %>
+          <% end %>
         </li>
       </ul>
     </nav>

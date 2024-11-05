@@ -22,5 +22,6 @@ Rails.application.routes.draw do
     resources :teacher_subjects, shallow: true
   end
   resources :subjects
+  resources :sessions, only: [:new, :create]
   root to: 'home#index'
 end
