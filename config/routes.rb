@@ -16,5 +16,5 @@ Rails.application.routes.draw do
     resources :teacher_subjects, shallow: true
   end
   resources :subjects
-  root to: 'subjects#index'
+  root to: 'home#index'
 end
