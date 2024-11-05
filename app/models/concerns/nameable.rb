@@ -7,4 +7,3 @@ module Nameable
     "#{first_name} #{last_name}"
   end
 end
-
