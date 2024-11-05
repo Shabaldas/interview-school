@@ -18,6 +18,9 @@
   </head>
 
   <body class="bg-gray-100">
+    <%= turbo_frame_tag "flash" do %>
+      <%= render "shared/flash" %>
+    <% end %>
     <div class="flex">
       <%= render 'layouts/sidebar' %>
 
