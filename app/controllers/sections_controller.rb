@@ -13,9 +13,13 @@ class SectionsController < ApplicationController
   end
 
   def enroll
-    current_student.sections << @section unless current_student.sections.include?(@section)
+    enrollment = current_student.enrollments.build(section: @section)
 
-    redirect_to available_sections_path, notice: { text: "Enrolled in #{@section.subject.name}" }
+    if enrollment.save
+      redirect_to available_sections_path, notice: { text: "Enrolled in #{@section.subject.name}" }
+    else
+      redirect_to available_sections_path, alert: { text: enrollment.errors.full_messages.to_sentence }
+    end
   end
 
   def withdraw
