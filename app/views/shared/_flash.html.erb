@@ -1,0 +1,20 @@
+<div id="flash-messages" data-controller="flash" class="fixed flex items-center mt-16 py-3 right-5 rounded-2xl w-80 z-50">
+
+  <% flash.each do |type, message| %>
+    <div class="flash <%= type %> p-4 mb-4 rounded text-white <%= flash_class(type) %>">
+      <div class="flex items-start justify-between p-4 mb-4 rounded text-white <%= flash_class(type) %> ">
+        <div class="flex items-start">
+          <h2 class="mx-2 mt-[1.45px]
+          text-base font-medium text-dark-blue text-left">
+            <%= message["text"] %>
+          </h2>
+        </div>
+        <button type="button" data-action="flash#dismiss">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="#2A343E">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  <% end %>
+</div>

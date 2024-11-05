@@ -14,12 +14,14 @@ class SectionsController < ApplicationController
 
   def enroll
     current_student.sections << @section unless current_student.sections.include?(@section)
-    redirect_to sections_path, notice: "Enrolled in #{@section.subject.name}"
+
+    redirect_to available_sections_path, notice: { text: "Enrolled in #{@section.subject.name}" }
   end
 
   def withdraw
     current_student.sections.delete(@section)
-    redirect_to sections_path, notice: "Withdrawn from #{@section.subject.name}"
+
+    redirect_to sections_path, alert: { text: "Withdrawn from #{@section.subject.name}" }
   end
 
   private
