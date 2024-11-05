@@ -11,6 +11,7 @@ gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[ windows jruby ]
+gem 'faker'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
@@ -35,7 +36,6 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'database_cleaner'
   gem 'factory_bot_rails'
-  gem 'faker'
   gem 'foreman'
   gem 'pry-rails'
   gem 'rails-controller-testing'
